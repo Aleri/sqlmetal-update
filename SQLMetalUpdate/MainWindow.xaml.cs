@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows;
 using Microsoft.Win32;
 
@@ -46,9 +47,22 @@ namespace SQLMetalUpdate
 
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
+            BackgroundWorker bw = new BackgroundWorker();
             RunProcess();
+
+            #region Display progress
+            
+            modificationProgress.Value = 50;
+            runScript.Visibility = Visibility.Visible;
+            chbx1.Visibility = Visibility.Visible;
+
+            #endregion
             fileManager.InsertLineInFile(txtFileToUpdate.Text, txtTextToInsert.Text, int.Parse(txtLineToInsertAt.Text));
             txtOutput.Text += "\n > Lines inserted into file successfully";
+
+            modificationProgress.Value = 100;
+            insertCode.Visibility = Visibility.Visible;
+            chbx2.Visibility = Visibility.Visible;
         }
 
         /// <summary>
@@ -76,6 +90,15 @@ namespace SQLMetalUpdate
             {
                 txtFileToUpdate.Text = ofd.FileName;
             }
+        }
+        private void options_Expanded(object sender, RoutedEventArgs e)
+        {
+            MetalUpdate.Height = 600;
+        }
+
+        private void options_Collapsed(object sender, RoutedEventArgs e)
+        {
+            MetalUpdate.Height = 180;
         }
     }
 }
