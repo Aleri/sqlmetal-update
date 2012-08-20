@@ -28,7 +28,7 @@
                         VerticalAlignment="Top"
                         Click="btnRun_Click"
                         Content="Update entities"
-                        FontFamily="Consolas"
+                        FontFamily="Segoe UI"
                         FontSize="12" />
                 <Image x:Name="chbx1"
                        Width="20"
@@ -40,7 +40,7 @@
                            Height="20"
                            Margin="52,70,403,0"
                            VerticalAlignment="Top"
-                           FontFamily="Consolas"
+                           FontFamily="Segoe UI"
                            FontSize="14"
                            Text="Run script"
                            Visibility="Hidden" />
@@ -54,7 +54,7 @@
                            Height="20"
                            Margin="49,93,406,0"
                            VerticalAlignment="Top"
-                           FontFamily="Consolas"
+                           FontFamily="Segoe UI"
                            FontSize="14"
                            Text="Insert custom code"
                            Visibility="Hidden" />
@@ -67,7 +67,7 @@
                       VerticalAlignment="Top"
                       Collapsed="options_Collapsed"
                       Expanded="options_Expanded"
-                      FontFamily="Consolas"
+                      FontFamily="Segoe UI"
                       FontSize="14"
                       Header="Options">
                 <Grid Width="597" VerticalAlignment="Top">
